@@ -20,11 +20,24 @@ Descuento: 5% si el total bruto > 40.000
 Estados: EN_CREACION -> CONFIMADO
 
 Tercer Paso
-CA1. Volumen: Calculo de precio por volumen.
-CA2. Descuento: Dado total bruto 41.000, cuando calculo total final, entonces aplico 5%. 
-CA3. Bloqueo: Dado pedido CONFIRMADO, cuando intento agregar items, entonces se rechaza. 
-CA4. Validaciopn: Dado cantidad 0, cuando agrego item, entonces se rechaza. 
-CA5. Resumen: Dado un pedido valido, cuando pido el resumen, entonces se listan items con precio aplicado, subtotal, descuento y total final.
+CA1. Volumen
+Dado Impresión B/N x120, cuando calculo subtotal, uso 150 c/u.
+![image](./assets/img1.jpg)
+CA2. Beneficio principal (10%)
+Dado 1 anillado y 30 impresiones, aplico 10% de descuento.
+![image](./assets/img2.jpg)
+CA3. Beneficio alterno (5%)
+Dado total bruto 45.000 sin condición de 10%, aplico 5%.
+![image](./assets/img3.jpg)
+CA4. Bloqueo después de confirmar
+Dado pedido CONFIRMADO, al intentar agregar ítem, se rechaza.
+![image](./assets/img4.jpg)
+CA5. Validación de cantidad
+Dado cantidad 0, al agregar ítem, se rechaza.
+![image](./assets/img5.jpg)
+CA6. Resumen
+Dado un pedido válido, al pedir resumen se listan precios aplicados, subtotales, descuento y total final.
+![image](./assets/img6.jpg)
 
 Cuarto Paso
 1. Cliente (entidad simple).
@@ -40,3 +53,22 @@ Quinto Paso
 4. Mostrar resumen: detalle con precio aplicado, subtotal por item, total bruto, descuento y total final.
 5. Confirmo pedido.
 6. Al intentar editar, debe fallar
+
+``
+papeleria/
+├─ app/
+│  └─ Main.java
+│
+├─ domain/
+│  ├─ Cliente.java
+│  ├─ Producto.java
+│  ├─ ItemPedido.java
+│  ├─ Pedido.java
+│  └─ EstadoPedido.java
+│
+└─ service/
+   └─ PapeleriaService.java
+
+``
+
+![image](./assets/67b0d62a-4301-4063-9e60-4f397b2fbd7e.jpg)
