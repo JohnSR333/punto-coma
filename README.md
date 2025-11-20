@@ -20,24 +20,49 @@ Descuento: 5% si el total bruto > 40.000
 Estados: EN_CREACION -> CONFIMADO
 
 Tercer Paso
+
+
 CA1. Volumen
 Dado Impresión B/N x120, cuando calculo subtotal, uso 150 c/u.
+
+
 ![image](./assets/img1.jpg)
+
+
 CA2. Beneficio principal (10%)
 Dado 1 anillado y 30 impresiones, aplico 10% de descuento.
+
+
 ![image](./assets/img2.jpg)
+
+
 CA3. Beneficio alterno (5%)
 Dado total bruto 45.000 sin condición de 10%, aplico 5%.
+
+
 ![image](./assets/img3.jpg)
+
+
 CA4. Bloqueo después de confirmar
 Dado pedido CONFIRMADO, al intentar agregar ítem, se rechaza.
+
+
 ![image](./assets/img4.jpg)
+
+
 CA5. Validación de cantidad
 Dado cantidad 0, al agregar ítem, se rechaza.
+
+
 ![image](./assets/img5.jpg)
+
+
 CA6. Resumen
 Dado un pedido válido, al pedir resumen se listan precios aplicados, subtotales, descuento y total final.
+
+
 ![image](./assets/img6.jpg)
+
 
 Cuarto Paso
 1. Cliente (entidad simple).
